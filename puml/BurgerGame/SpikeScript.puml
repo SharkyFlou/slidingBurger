@@ -1,0 +1,7 @@
+@startuml
+class BurgerGame.SpikeScript <<MonoBehaviour>>{
+    + Deploy() : void
+    + Undeploy() : void
+}
+BurgerGame.SpikeScript --> "animator" Animator
+@enduml

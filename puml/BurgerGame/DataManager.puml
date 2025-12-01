@@ -1,0 +1,18 @@
+@startuml
+package BurgerGame {
+    class DataManager <<MonoBehaviour>>{
+        + MapPath : string
+        + MapMusic : string
+        + IsMapCreated : bool
+        + IsTesting : bool
+        - jsonFilePath : string
+        Awake() : void
+        - UpdateMapData(mapUpdater:System.Action<JObject>) : void
+        + SaveProgressIfGreater(newProgress:float) : void
+        + SaveNbTries() : void
+        + SaveFirstWin() : void
+    }
+}
+
+BurgerGame.DataManager --> "Instance" BurgerGame.DataManager
+@enduml

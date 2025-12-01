@@ -1,0 +1,13 @@
+@startuml
+class MapEditor.GridVisualizer <<MonoBehaviour>>{
+    + width : int = 200
+    + height : int = 15
+    + cellSize : float = 1f
+    + lineWidth : float = 0.05f
+    - Start() : void
+    - DrawGrid() : void
+    - CreateLine(start:Vector3, end:Vector3) : void
+}
+MapEditor.GridVisualizer o-> "+ gridColor" Color
+MapEditor.GridVisualizer --> "- gridObject" GameObject
+@enduml

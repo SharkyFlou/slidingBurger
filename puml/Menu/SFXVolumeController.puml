@@ -1,0 +1,7 @@
+@startuml
+class Menu.SFXVolumeController <<MonoBehaviour>>{
+    - <<const>> SFXVolumeKey : string = "SFXVolume"
+    Start() : void
+}
+Menu.SFXVolumeController --> "sfxSlider" Slider
+@enduml

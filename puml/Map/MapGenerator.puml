@@ -1,0 +1,50 @@
+@startuml
+class Map.MapGenerator <<MonoBehaviour>>{
+    - <<const>> BLOCK : char = 'B'
+    - <<const>> KNIFE_UP : char = '>'
+    - <<const>> KNIFE_DOWN : char = '<'
+    - <<const>> KNIFE_LEFT : char = '^'
+    - <<const>> KNIFE_RIGHT : char = 'v'
+    - <<const>> SPAWN : char = 'S'
+    - <<const>> END : char = 'E'
+    - <<const>> PAN : char = 'P'
+    - <<const>> BARBECUE_NORMAL : char = 'N'
+    - <<const>> BARBECUE_UFO : char = 'U'
+    - <<const>> BARBECUE_JET : char = 'J'
+    - <<const>> BARBECUE_ONE : char = '1'
+    - <<const>> BARBECUE_TWO : char = '2'
+    - <<const>> BARBECUE_THREE : char = '3'
+    - <<const>> BARBECUE_FOUR : char = '4'
+    - <<const>> BARBECUE_FIVE : char = '5'
+    - <<const>> BARBECUE_GRAVITY : char = 'G'
+    - <<const>> CHECKPOINT : char = 'C'
+    - <<const>> ORB : char = 'O'
+    - StartMapX : int = 15
+    Start() : void
+    CreateMap(elements:List<List<string>>) : void
+    spawnBurger() : void
+    fillMap(mapWidth:int, fillHeight:int, yCoords:int, xCoords:int) : void
+    CreateSquare(xCoords:int, yCoords:int) : void
+    CreateKnife(xCoords:int, yCoords:int, direction:char) : void
+    CreateSpawn(xCoords:int, yCoords:int) : void
+    CreateEnd(xCoords:int, yCoords:int) : void
+    createOrb(xCoords:int, yCoords:int) : void
+    CreatePan(xCoords:int, yCoords:int) : void
+    CreateCheckpoint(xCoords:int, yCoords:int) : void
+    createBarbecue(xCoords:int, yCoords:int, type:char, speed:Speeds, Gamemode:Gamemodes, Gravity:int) : void
+}
+class Map.Root {
+}
+class "List`2"<T> {
+}
+Map.MapGenerator -d-> "blockPrefab" GameObject
+Map.MapGenerator -d-> "knifePrefab" GameObject
+Map.MapGenerator -d-> "spawnPrefab" GameObject
+Map.MapGenerator -d-> "endPrefab" GameObject
+Map.MapGenerator -d-> "panPrefab" GameObject
+Map.MapGenerator -d-> "barbecuePrefab" GameObject
+Map.MapGenerator -d-> "checkpointPrefab" GameObject
+Map.MapGenerator -d-> "orbPrefab" GameObject
+Map.MapGenerator +-- Map.Root
+Map.Root --> "Elements<List<string>>" "List`2"
+@enduml

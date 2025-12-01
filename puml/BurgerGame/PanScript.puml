@@ -1,0 +1,8 @@
+@startuml
+class BurgerGame.PanScript <<MonoBehaviour>>{
+    + playerNbrTries : int = 0
+    + Flip() : void
+    + Unflip() : void
+}
+BurgerGame.PanScript --> "animator" Animator
+@enduml

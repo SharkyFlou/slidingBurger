@@ -1,0 +1,17 @@
+@startuml
+package BurgerGame {
+    class BarbebueScript <<MonoBehaviour>>{
+        + BarbecueGravity : int
+        - TriesThatCollided : int
+        ~ OnCollisionEnter2D(collision:Collision2D) : void
+        ~ spawnParticles(position:Vector3) : void
+    }
+}
+BurgerGame.BarbebueScript --> "BarbecueSpeed" BurgerGame.Speeds
+BurgerGame.BarbebueScript --> "BarbecueGamemode" BurgerGame.Gamemodes
+BurgerGame.BarbebueScript -d-> "transformationParticle" GameObject
+BurgerGame.BarbebueScript o-> "colorForSpeed" Color
+BurgerGame.BarbebueScript o-> "colorForGravity" Color
+BurgerGame.BarbebueScript o-> "colorForGamemode" Color
+
+@enduml

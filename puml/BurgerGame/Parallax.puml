@@ -1,0 +1,11 @@
+@startuml
+class BurgerGame.Parallax <<MonoBehaviour>>{
+    + parallaxEffect : float
+    - StartPosX : float
+    - StartPosY : float
+    - length : float
+    Start() : void
+    Update() : void
+}
+BurgerGame.Parallax -d-> "cam" GameObject
+@enduml

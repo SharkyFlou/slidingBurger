@@ -1,0 +1,45 @@
+@startuml
+package Audio {
+    class AudioManager <<MonoBehaviour>>{
+        + hasJumpedRecently : bool
+        + jumpCooldown : float
+        - <<const>> SFXVolumeKey : string
+        - <<const>> MusicVolumeKey : string
+        ~ Awake() : void
+        - InitInstance() : void
+        ~ OnSceneLoaded(scene:Scene, mode:LoadSceneMode) : void
+        ~ OnDestroy() : void
+        - ResetJumpCooldown() : void
+        + PlayJumpSoundNormal() : void
+        + PlayJumpSoundUFO() : void
+        + PlayJumpSoundShip() : void
+        + PlayDeathSound() : void
+        + PlayClickSound() : void
+        + PlayPowerupSound() : void
+        + PlayPanSound() : void
+        + PlayCutSound() : void
+        + PlayEndMusic() : void
+        + PlayOrbSound() : void
+        + PlayCheckPointSound() : void
+        + PlayMenuMusic() : void
+    }
+}
+Audio.AudioManager --> "Instance" Audio.AudioManager
+Audio.AudioManager --> "musicSource" AudioSource
+Audio.AudioManager --> "sfxSource" AudioSource
+Audio.AudioManager --> "motorSource" AudioSource
+Audio.AudioManager --> "cutSound" AudioClip
+Audio.AudioManager --> "motorSound" AudioClip
+Audio.AudioManager --> "jumpSoundShip" AudioClip
+Audio.AudioManager --> "EndMusic" AudioClip
+Audio.AudioManager --> "jumpSoundNormal[]" AudioClip
+Audio.AudioManager --> "jumpSoundUFO[]" AudioClip
+Audio.AudioManager --> "deathSound[]" AudioClip
+Audio.AudioManager --> "clickSound[]" AudioClip
+Audio.AudioManager --> "panSounds[]" AudioClip
+Audio.AudioManager --> "powerUpSound[]" AudioClip
+Audio.AudioManager --> "checkPointSound[]" AudioClip
+Audio.AudioManager --> "mapsMusic[]" AudioClip
+Audio.AudioManager --> "menuMusic[]" AudioClip
+Audio.AudioManager --> "orbSounds[]" AudioClip
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+package BurgerGame {
+    class BurgerCollision <<MonoBehaviour>>{
+        + GroundCheckRadius : float
+        Start() : void
+        Update() : void
+        + Die() : void
+        + Shake() : void
+        - OnTriggerEnter2D(collision:Collider2D) : void
+        ~ OnTriggerExit2D(collision:Collider2D) : void
+        - Bump() : void
+        + GoBack() : void
+        - Spawn() : void
+        - ReturnToMapEditor() : void
+        + RestartLevel() : void
+    }
+}
+BurgerGame.BurgerCollision -d-> "burgerInfo" BurgerGame.BurgerInfo
+BurgerGame.BurgerCollision --> "rb" Rigidbody2D
+BurgerGame.BurgerCollision -d-> "SpriteExplosion" GameObject
+BurgerGame.BurgerCollision --> "Sprite" Transform
+BurgerGame.BurgerCollision --> "GroundMask" LayerMask
+BurgerGame.BurgerCollision -d-> "particulePrefab" GameObject
+BurgerGame.BurgerCollision --> "animator" Animator
+BurgerGame.BurgerCollision -d-> "cam" GameObject
+@enduml

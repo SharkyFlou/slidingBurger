@@ -1,0 +1,7 @@
+@startuml
+package Audio  {
+    class AudioClickMenu <<MonoBehaviour>> {
+        + PlayClickSound() : void
+    }
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class BurgerGame.OrbScript <<MonoBehaviour>>{
+    + playerNbrTries : int = 0
+    + ReactToPlayer() : void
+}
+BurgerGame.OrbScript -d-> "particulePrefab" GameObject
+@enduml

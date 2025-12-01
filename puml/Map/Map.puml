@@ -1,0 +1,14 @@
+@startuml
+class Map.Map <<MonoBehaviour>>{
+    - mapName : string
+    - filePath : int
+    - mapBackground : string
+    - mapMusic : string
+    - mapDescription : string
+    - mapDifficulty : int
+    Start() : void
+    Update() : void
+}
+Map.Map o-> "mapElements<List<Object>>" Object
+
+@enduml

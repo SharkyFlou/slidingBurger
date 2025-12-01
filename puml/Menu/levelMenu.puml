@@ -1,0 +1,39 @@
+@startuml
+class Menu.LevelMenu <<MonoBehaviour>>{
+    - jsonFilePath : string
+    OnEnable() : void
+    LoadJSONData() : void
+    InitializeBackToMenuButton() : void
+    InitializeCreateMapButton() : void
+    GenerateStars(starContainer:Transform, difficultyLevel:int) : void
+    OnButtonClicked(map:MapData) : void
+    + BackToMenu() : void
+    + GoToMapCreator() : void
+    + BackToLevelList() : void
+}
+class Menu.MapData {
+    + PathMap : string <<get>> <<set>>
+    + PathMusic : string <<get>> <<set>>
+    + DifficultyLevel : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Progress : float <<get>> <<set>>
+    + FirstWin : int <<get>> <<set>>
+    + NbTries : int <<get>> <<set>>
+    + IsMapCreated : bool <<get>> <<set>>
+}
+class Menu.Root {
+}
+Menu.LevelMenu -d-> "buttonPrefab" GameObject
+Menu.LevelMenu --> "buttonParent" Transform
+Menu.LevelMenu -d-> "greyStar" GameObject
+Menu.LevelMenu -d-> "yellowStar" GameObject
+Menu.LevelMenu --> "backButtonParent" Transform
+Menu.LevelMenu -d-> "backToMenuButtonPrefab" GameObject
+Menu.LevelMenu --> "createMapButtonParent" Transform
+Menu.LevelMenu -d-> "createMapButtonPrefab" GameObject
+Menu.LevelMenu -d-> "levelScrollView" GameObject
+Menu.LevelMenu -d-> "mapCreationPanel" GameObject
+Menu.LevelMenu +-- Menu.MapData
+Menu.LevelMenu +-- Menu.Root
+Menu.Root --> "Maps[]" Menu.MapData
+@enduml

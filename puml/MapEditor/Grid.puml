@@ -1,0 +1,21 @@
+@startuml
+class MapEditor.Grid {
+    - width : int
+    - height : int
+    - cellSize : float
+    - hasPlacedEndTile : bool = false
+    - <<const>> EMPTY_TILE_INDEX : int = 0
+    - <<const>> GROUND_TILE_INDEX : int = 1
+    - <<const>> SPAWN_TILE_INDEX : int = 2
+    + Grid(width:int, height:int, cellSize:float, tilePrefabs:GameObject[], gridObjects:GameObject)
+    + GetWorldPosition(x:int, y:int) : Vector3
+    + SetTileWithNoGridConstraints(x:float, y:float, tilePrefab:GameObject) : void
+    + SetTile(x:float, y:float, tilePrefab:GameObject, firstClcik:bool) : void
+    + SaveData() : void
+    - CreateJSONTileEntry(tag:string) : char
+    + LoadData() : void
+    - GetPrefabForTileChar(tileChar:char) : GameObject
+    + isEndTilePlaced() : bool
+}
+MapEditor.Grid --> "gridObjects" GameObject
+@enduml

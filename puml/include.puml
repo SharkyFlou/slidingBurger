@@ -1,0 +1,32 @@
+@startuml
+!include ./MapEditor/MapEditorManager.puml
+!include ./MapEditor/Grid.puml
+!include ./MapEditor/ScrollViewManager.puml
+!include ./MapEditor/GridVisualizer.puml
+!include ./Audio/AudioManager.puml
+!include ./Audio/AudioClickMenu.puml
+!include ./Map/PlayingMap.puml
+!include ./Map/MapGenerator.puml
+!include ./Map/Map.puml
+!include ./Menu/MainMenu.puml
+!include ./Menu/SFXVolumeController.puml
+!include ./Menu/MusicVolumeController.puml
+!include ./Menu/LevelMenu.puml
+!include ./Menu/MapCreation.puml
+!include ./BurgerGame/PanScript.puml
+!include ./BurgerGame/Parallax.puml
+!include ./BurgerGame/SpikeScript.puml
+!include ./BurgerGame/BurgerCollision.puml
+!include ./BurgerGame/EndScript.puml
+!include ./BurgerGame/BarbebueScript.puml
+!include ./BurgerGame/CheckPoint.puml
+!include ./BurgerGame/PauseMenu.puml
+!include ./BurgerGame/DataManager.puml
+!include ./BurgerGame/BurgerInfo.puml
+!include ./BurgerGame/BurgerMovement.puml
+!include ./BurgerGame/OrbScript.puml
+!include ./BurgerGame/BurgerMovement/BurgerMovementCube.puml
+!include ./BurgerGame/BurgerMovement/BurgerMovementShip.puml
+!include ./BurgerGame/BurgerMovement/BurgerMovementUFO.puml
+!include ./BurgerGame/BurgerMovement/BurgerMovementBasic.puml
+@enduml

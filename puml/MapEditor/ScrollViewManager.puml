@@ -1,0 +1,24 @@
+@startuml
+class MapEditor.DescriptionEntry <<MonoBehaviour>>{
+    + key : string
+    + name : string
+    + description : string
+}
+
+class MapEditor.ScrollViewManager <<MonoBehaviour>>{
+    + ScrollViewManager(tilePrefabs:GameObject[], contentPanel:Transform, firstSelectedTile:GameObject, forbiddenSprite:Sprite)
+    - OnTileSelected(tilePrefab:GameObject) : void
+    - LoadDescriptions() : void
+    - PopulateScrollView() : void
+    - ShowTooltip(name:string, description:string) : void
+    - HideTooltip() : void
+}
+
+MapEditor.ScrollViewManager -d-> "selectedTilePrefab" GameObject
+MapEditor.ScrollViewManager --> "forbiddenSprite" Sprite
+MapEditor.ScrollViewManager --> "contentPanel" Transform
+MapEditor.ScrollViewManager --> "tooltipPanel" GameObject
+MapEditor.ScrollViewManager --> "tooltipText" Text
+MapEditor.ScrollViewManager --> "tooltipTitle" Text
+
+@enduml

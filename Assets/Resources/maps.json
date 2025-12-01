@@ -1,0 +1,54 @@
+{
+  "maps": [
+    {
+      "pathMap": "Maps/first_map.json",
+      "pathMusic": "Music/Musics/so-happy-with-my-8-bit-game",
+      "nbTries": 0,
+      "firstWin": 0,
+      "difficultyLevel": 1,
+      "name": "What's this?",
+      "progress": 0,
+      "isMapCreated": false 
+    },
+    {
+      "pathMap": "Maps/map_ship.json",
+      "pathMusic": "Music/Musics/8-bit-air-fight",
+      "nbTries": 0,
+      "firstWin": 0,
+      "difficultyLevel": 2,
+      "name": "Brrrrrrr",
+      "progress": 0,
+      "isMapCreated": false 
+    },
+    {
+      "pathMap": "Maps/map_ufo.json",
+      "pathMusic": "Music/Musics/gaming-music-8-bit-console-play-background-intro-theme",
+      "nbTries": 0,
+      "firstWin": 0,
+      "difficultyLevel": 3,
+      "name": "Spooky-dooky",
+      "progress": 0,
+      "isMapCreated": false 
+    },
+    {
+      "pathMap": "Maps/going_fast.json",
+      "pathMusic": "Music/Musics/the-return-of-the-8-bit-era",
+      "nbTries": 0,
+      "firstWin": 0,
+      "difficultyLevel": 4,
+      "name": "Zooooming",
+      "progress": 0,
+      "isMapCreated": false 
+    },
+    {
+      "pathMap": "Maps/do_you_like_precision.json",
+      "pathMusic": "Music/Musics/flat-8-bit-gaming-music-instrumental",
+      "nbTries": 0,
+      "firstWin": 0,
+      "difficultyLevel": 5,
+      "name": "Pre-ci-sion",
+      "progress": 0,
+      "isMapCreated": false 
+    } 
+  ]
+}

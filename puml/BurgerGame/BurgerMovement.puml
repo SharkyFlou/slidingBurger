@@ -1,0 +1,37 @@
+@startuml
+package BurgerGame {
+    enum Speeds {
+        Nothing= -1,
+        Slow= 0,
+        Normal= 1,
+        Fast= 2,
+        Faster= 3,
+        Fastest= 4,
+        Stopped= 5,
+    }
+    enum Gamemodes {
+        Nothing= -1,
+        Cube= 0,
+        Ship= 1,
+        UFO= 2,
+    }
+    class BurgerMovementClass as "BurgerMovement" <<MonoBehaviour>>  {
+        + GroundCheckRadius : float
+        Start() : void
+        Update() : void
+        + CheckGroundCollition() : bool
+        + ChangeThroughPortal(Gamemode:Gamemodes, Speed:Speeds, gravity:int) : void
+    }
+}
+BurgerGame.BurgerMovementClass --> "GroundMask" LayerMask
+BurgerGame.BurgerMovementClass --> "Sprite" Transform
+BurgerGame.BurgerMovementClass --> "rb" Rigidbody2D
+BurgerGame.BurgerMovementClass -down-> "BurgerInfo" BurgerGame.BurgerInfo
+BurgerGame.BurgerMovementClass --> "CurrentTypeMovement" BurgerGame.BurgerMovement.BurgerMovementBasic
+BurgerGame.BurgerMovementClass --> "animator" Animator
+BurgerGame.BurgerMovementClass -d-> "sliderGameObject" GameObject
+BurgerGame.BurgerMovementClass --> "slider" Slider
+BurgerGame.BurgerMovementClass -d-> "movementParticle" GameObject
+BurgerGame.BurgerMovementClass -d-> "cloudParticle" GameObject
+BurgerGame.BurgerMovementClass -d-> "laserParticle" GameObject
+@enduml

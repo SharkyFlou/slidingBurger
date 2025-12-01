@@ -1,0 +1,38 @@
+@startuml
+class MapEditor.MapEditorManager <<MonoBehaviour>>{
+    - width : int = 200
+    - height : int = 15
+    - cellSize : float = 1f
+    rightmostCellX : float
+    leftmostCellX : float
+    - cameraY : float = 0f
+    - <<const>> HORIZONTAL_SCROLL_SPEED : float = 30f
+    - <<const>> VERTICAL_SCROLL_SPEED : float = 20f
+    - <<const>> MIN_VERTICAL_POSITION : float
+    - <<const>> MAX_VERTICAL_POSITION : float = 20f
+    - <<const>> ZOOM_SPEED : float = 5f
+    - <<const>> MIN_ZOOM : float = 5f
+    - <<const>> MAX_ZOOM : float = 15f
+    - isPlacingTiles : bool = false
+    - Start() : void
+    + ShowError(message:string) : void
+    + HideError() : void
+    - CenterItems(height:int, cellSize:float) : void
+    - Update() : void
+    - HandleCameraMovement() : void
+    - HandleTilePlacement() : void
+    - PlaceTileAtMousePosition(firstClick:bool) : void
+    + CallSaveGrid() : void
+    + ExitButton() : void
+    + TestingButton() : void
+}
+MapEditor.MapEditorManager --> "grid" MapEditor.Grid
+MapEditor.MapEditorManager --> "scrollViewManager" MapEditor.ScrollViewManager
+MapEditor.MapEditorManager --> "firstSelectedTile" GameObject
+MapEditor.MapEditorManager --> "gridObjects" GameObject
+MapEditor.MapEditorManager --> "scrollView" RectTransform
+MapEditor.MapEditorManager --> "contentPanel" Transform
+MapEditor.MapEditorManager --> "forbiddenTile" Sprite
+MapEditor.MapEditorManager --> "errorPopupPanel" GameObject
+MapEditor.MapEditorManager --> "errorPopupText" TMP_Text
+@enduml

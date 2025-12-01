@@ -1,0 +1,29 @@
+@startuml
+package BurgerGame {
+    class BurgerInfo {
+
+        + Reset() : void
+        + spawnX : float
+        + spawnY : float
+        + initialSpawnX : int
+        + initialSpawnY : int
+        + endX : int
+        + endY : int
+        + currentProgress : float = 0f
+        + IsDead : bool = true
+        + CanSpawn : bool = false
+        + GravityDirection : int = 1
+        + DefaultGravityDirection : int = 1
+        + CurrentGravityScale : float
+        + DefaultGravityScale : float
+        + NbrTries : int = 1
+    }
+}
+
+BurgerGame.BurgerInfo --> "Instance" BurgerGame.BurgerInfo
+BurgerGame.BurgerInfo o-u-> "DefaultSpeed" BurgerGame.Speeds
+BurgerGame.BurgerInfo o-u-> "DefaultGamemode" BurgerGame.Gamemodes
+BurgerGame.BurgerInfo o-u-> "CurrentSpeed" BurgerGame.Speeds
+BurgerGame.BurgerInfo o-u-> "CurrentGamemode" BurgerGame.Gamemodes
+BurgerGame.BurgerInfo o-> "OrbsInContact[]" GameObject
+@enduml

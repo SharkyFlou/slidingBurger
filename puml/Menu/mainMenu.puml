@@ -1,0 +1,6 @@
+@startuml
+class Menu.MainMenu <<MonoBehaviour>>{
+    + PlayGame() : void
+    + QuitGame() : void
+}
+@enduml

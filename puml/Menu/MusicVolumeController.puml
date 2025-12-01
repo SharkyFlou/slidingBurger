@@ -1,0 +1,7 @@
+@startuml
+class Menu.MusicVolumeController <<MonoBehaviour>>{
+    - <<const>> MusicVolumeKey : string = "MusicVolume"
+    Start() : void
+}
+Menu.MusicVolumeController --> "musicSlider" Slider
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+package BurgerGame{
+    class CheckPoint <<MonoBehaviour>>{
+        - alreadyCollided : bool = false
+        OnCollisionEnter2D(collision:Collision2D) : void
+    }
+}
+
+BurgerGame.CheckPoint -d-> "particulePrefab" GameObject
+@enduml

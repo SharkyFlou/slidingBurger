@@ -1,0 +1,6 @@
+@startuml
+class Map.PlayingMap <<MonoBehaviour>>{
+    Start() : void
+    Update() : void
+}
+@enduml

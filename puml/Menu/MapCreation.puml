@@ -1,0 +1,9 @@
+@startuml
+class Menu.MapCreation <<MonoBehaviour>>{
+    + OnCreateMapButtonClicked() : void
+    + HideErrorPopup() : void
+}
+Menu.MapCreation --> "mapNameInput" TMP_InputField
+Menu.MapCreation --> "ErrorPopupPanel" GameObject
+
+@enduml

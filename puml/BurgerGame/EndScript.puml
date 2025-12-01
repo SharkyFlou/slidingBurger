@@ -1,0 +1,7 @@
+@startuml
+class BurgerGame.EndScript <<MonoBehaviour>>{
+    + EndGame() : void
+    + EndGameAnimation() : void
+}
+BurgerGame.EndScript --> "animator" Animator
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class BurgerGame.PauseMenuOnGUI <<MonoBehaviour>>{
+    - isPaused : bool = false
+    Update() : void
+    OnGUI() : void
+    PauseMenuWindow(windowID:int) : void
+    Pause() : void
+    Resume() : void
+}
+@enduml
